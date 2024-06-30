@@ -1,13 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
-import { Home } from "./views/home";
-
-import { Single } from "./views/single";
+import { Characters } from "./views/characters";
+import { Vehicles } from "./views/vehicles";
+import { Planets } from "./views/planets";
 import injectContext from "./store/appContext";
-
-import { Navbar } from "./component/navbar";
+import { NavbarHtml } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { VehicleDetails } from "./views/vehiclesDetails";
 import { CharactersDetails } from "./views/charactersDetails";
@@ -21,16 +19,18 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
+		<div className="h-100">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+					<NavbarHtml />
 					<Routes>
-						<Route path="/" element={<Home />} />
-						{/* <Route path="/demo" element={<Demo />} /> */}
-						<Route path="/vehicles/:theid" element={<VehicleDetails />} />
+						<Route path="/" element={<Characters />} />
+						<Route path="/characters" element={<Characters />} />
+						<Route path="/vehicles" element={<Vehicles />} />
+						<Route path="/vehicles/:id" element={<VehicleDetails />} />
 						<Route path="/characters/:id" element={<CharactersDetails />} />
-						<Route path="/planets/:theid" element={<PlanetDetails />} />
+						<Route path="/planets" element={<Planets />} />
+						<Route path="/planets/:id" element={<PlanetDetails />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

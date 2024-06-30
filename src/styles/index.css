@@ -1,3 +1,55 @@
 /* 
     General Styles
 */
+body {
+    background-image: url(https://e0.pxfuel.com/wallpapers/804/170/desktop-wallpaper-star-wars-star-background-best-background-star-wars-universe.jpg);
+}
+
+.navbar {
+    background: rgb(40,40,40);
+    background: linear-gradient(180deg, rgba(40,40,40,1) 50%, rgba(0,0,0,0) 100%);
+    flex-wrap: nowrap;
+    padding: 0;
+}
+
+.yellow-hover:hover{
+    background: linear-gradient(180deg, #e5b415 50%, rgba(0,0,0,0) 100%);
+}
+
+.card{
+    border: none;
+}
+a { 
+    text-decoration: none; 
+} 
+a:hover { 
+    text-decoration: none; 
+} 
+a:active { 
+text-decoration: none; 
+}
+
+.starWarsLogo{
+    width: 10%;
+    min-width: 100px;
+}
+
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background-color: #f2fdff00;
+  }
+ 
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #e9b713;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #ffb60c;
+  }
+  
