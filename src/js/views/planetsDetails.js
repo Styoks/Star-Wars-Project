@@ -47,7 +47,7 @@ export const PlanetDetails = ({type}) => {
 					</Table>
 				</div>
 			</div>
-					<Link to="/people" className="btn btn-warning d-flex align-items-center h-25 mt-5">Go back</Link>
+					<Link to="/planets" className="btn btn-warning d-flex align-items-center h-25 mt-5">Go back</Link>
 		</div>
 )};
 
