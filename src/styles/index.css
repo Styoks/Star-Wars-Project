@@ -53,3 +53,8 @@ text-decoration: none;
     background-color: #ffb60c;
   }
   
+  .cardImgDetails{
+    max-width: 60%;
+    min-width: 60%;
+    object-fit: cover;
+  }

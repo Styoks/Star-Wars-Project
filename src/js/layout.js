@@ -1,14 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-import { Characters } from "./views/characters";
-import { Vehicles } from "./views/vehicles";
-import { Planets } from "./views/planets";
+import { Entity } from "./views/entities";
 import injectContext from "./store/appContext";
 import { NavbarHtml } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { VehicleDetails } from "./views/vehiclesDetails";
-import { CharactersDetails } from "./views/charactersDetails";
+import { PeopleDetails } from "./views/peopleDetails";
 import { PlanetDetails } from "./views/planetsDetails";
 
 
@@ -24,13 +22,13 @@ const Layout = () => {
 				<ScrollToTop>
 					<NavbarHtml />
 					<Routes>
-						<Route path="/" element={<Characters />} />
-						<Route path="/characters" element={<Characters />} />
-						<Route path="/vehicles" element={<Vehicles />} />
-						<Route path="/vehicles/:id" element={<VehicleDetails />} />
-						<Route path="/characters/:id" element={<CharactersDetails />} />
-						<Route path="/planets" element={<Planets />} />
-						<Route path="/planets/:id" element={<PlanetDetails />} />
+						<Route path="/" element={<Entity type={"people"} />} />
+						<Route path="/people" element={<Entity type={"people"} />} />
+						<Route path="/vehicles" element={<Entity type={"vehicles"} />} />
+						<Route path="/planets" element={<Entity type={"planets"} />} />
+						<Route path="/people/:id" element={<PeopleDetails type={"people"} />} />
+						<Route path="/vehicles/:id" element={<VehicleDetails type={"vehicles"} />} />
+						<Route path="/planets/:id" element={<PlanetDetails type={"planets"} />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

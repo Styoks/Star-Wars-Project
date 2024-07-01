@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import { Table } from "react-bootstrap";
 
 
-export const VehicleDetails = ({type}) => {
+export const PeopleDetails = ({type}) => {
 	const {store, actions} = useContext(Context)
 	const {id} = useParams()
 
@@ -13,39 +13,44 @@ export const VehicleDetails = ({type}) => {
 		actions.getEntitiesDetails(id, type)
 	}, []);
 
-
 	return(
 		<div className="w-100 d-flex flex-column align-items-center ">
 
-			<div className="d-flex justify-content-center mt-5 rounded-3 bg-light w-50 overflow-hidden " style={{width: "100%", height: "500px"}}>
+			<div className="d-flex justify-content-center mt-5 rounded-3 bg-light w-50 overflow-hidden" style={{width: "100%", height: "500px"}}>
 				<img src={`https://starwars-visualguide.com/assets/img/${type === "people"? "characters" : type}/${id}.jpg`} 
-					className="cardImgDetails" alt="..."/>
+					style={{height: "500px"}} alt="..."/>
 				<div className="w-100 d-flex">
 					<Table className="mb-0">
 						<tbody>
+
 							<tr>
 								<td><strong>Name:</strong></td>
 								<td>{store[type + "Details"].name}</td>
 							</tr>
+
 							<tr>
-								<td><strong>Crew:</strong></td>
-								<td>{store[type + "Details"].crew}</td>
+								<td><strong>Birth year:</strong></td>
+								<td>{store[type + "Details"].birth_year}</td>
 							</tr>
+
 							<tr>
-								<td><strong>Length:</strong></td>
-								<td>{store[type + "Details"].length}</td>
+								<td><strong>Gender:</strong></td>
+								<td>{store[type + "Details"].gender}</td>
 							</tr>
+
 							<tr>
-								<td><strong>Manufacturer:</strong></td>
-								<td>{store[type + "Details"].manufacturer}</td>
+								<td><strong>Height:</strong></td>
+								<td>{store[type + "Details"].height}</td>
 							</tr>
+
 							<tr>
-								<td><strong>Model:</strong></td>
-								<td>{store[type + "Details"].model}</td>
+								<td><strong>Skin color:</strong></td>
+								<td>{store[type + "Details"].skin_color}</td>
 							</tr>
+							
 							<tr>
-								<td><strong>Passengers:</strong></td>
-								<td>{store[type + "Details"].passengers}</td>
+								<td><strong>Hair:</strong></td>
+								<td>{store[type + "Details"].hair_color}</td>
 							</tr>
 
 						</tbody>
@@ -55,3 +60,4 @@ export const VehicleDetails = ({type}) => {
 					<Link to="/people" className="btn btn-warning d-flex align-items-center h-25 mt-5">Go back</Link>
 		</div>
 )};
+
